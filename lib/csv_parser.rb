@@ -32,7 +32,7 @@ module ReviewRedirect
     end
 
     def current_line_number
-      @csv_row_number + 1
+      @csv_row_number + 2
     end
 
     def count_line_numbers
