@@ -8,9 +8,9 @@ $ bundle
 ```
 
 edit example.csv:
-original_domain      |  original_path  |  redirect_domain          |  redirect_path
----------------------|-----------------|---------------------------|-----------------
-https://example.com  |       /a/       |  https://www.example.com  |  /b/
+|original_domain      |  original_path  |  redirect_domain          |  redirect_path  |
+|---------------------|-----------------|---------------------------|-----------------|
+|https://example.com  |       /a/       |  https://www.example.com  |  /b/            |
 
 start script:
 ```bash
