@@ -2,6 +2,12 @@ require 'csv'
 
 module ReviewRedirect
   class CSVParser
+    CSVSETTINGS = {
+      headers: true,
+      header_converters: :symbol,
+      col_sep: ';'
+    }.freeze
+
     attr_accessor :file_path, :csv_row_number
     attr_reader :csv_content
 
@@ -19,7 +25,7 @@ module ReviewRedirect
     end
 
     def fetch_line
-      @csv_content ||= CSV.read( file_path, { headers: true,  header_converters: :symbol } )
+      @csv_content ||= CSV.read(file_path, CSVSETTINGS)
     end
 
     def next
