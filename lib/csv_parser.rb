@@ -17,11 +17,11 @@ module ReviewRedirect
     end
 
     def original_url
-      fetch_line[@csv_row_number][:original_domain] + fetch_line[@csv_row_number][:original_path]
+      fetch_line[@csv_row_number][:original_domain].to_s + fetch_line[@csv_row_number][:original_path].to_s
     end
 
     def redirect_url
-      fetch_line[@csv_row_number][:redirect_domain] + fetch_line[@csv_row_number][:redirect_path]
+      fetch_line[@csv_row_number][:redirect_domain].to_s + fetch_line[@csv_row_number][:redirect_path].to_s
     end
 
     def fetch_line
