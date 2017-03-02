@@ -1,4 +1,5 @@
 require 'http'
+
 module ReviewRedirect
   class Browser
     attr_reader :redirect_url, :url, :hostname, :path, :call_url
@@ -22,6 +23,10 @@ module ReviewRedirect
 
     def call_url
       @call_url ||= HTTP.get(url)
+    end
+
+    def redirect?
+      status == 301 or status == 302
     end
   end
 end

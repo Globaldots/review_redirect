@@ -8,7 +8,7 @@ csv = ReviewRedirect::CSVParser.new(file_path: csv_path)
 
 while csv.end?
   browser = ReviewRedirect::Browser.new(url: csv.original_url)
-  if (csv.redirect_url == browser.redirect_url && ( browser.status == 301 || browser.status == 302 ))
+  if csv.redirect_url == browser.redirect_url && browser.redirect?
     puts 'ok'.green
   else
     puts '>>> WRONG <<<'.red
