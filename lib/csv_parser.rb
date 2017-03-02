@@ -1,4 +1,5 @@
 require 'csv'
+
 module ReviewRedirect
   class CSVParser
     attr_accessor :file_path, :csv_row_number
@@ -18,7 +19,7 @@ module ReviewRedirect
     end
 
     def fetch_line
-      @csv_content ||= CSV.read(file_path, {headers: true,  header_converters: :symbol})
+      @csv_content ||= CSV.read( file_path, { headers: true,  header_converters: :symbol } )
     end
 
     def next
@@ -42,5 +43,5 @@ module ReviewRedirect
     def end?
       fetch_line.count > @csv_row_number
     end
-  end    
+  end
 end
